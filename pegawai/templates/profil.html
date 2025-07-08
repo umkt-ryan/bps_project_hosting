@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{%load static%}
+{% block content %}
+<div class="container d-flex justify-content-center align-items-start" style="min-height: 80vh; padding-top: 40px;">
+  <div class="card shadow-lg" style="width: 800px; position: relative;">
+    <div class="card-body">
+      
+      <!-- Judul -->
+      <h2 class="card-title text-center mb-4">Profil Pegawai</h2>
+
+      <!-- Foto Pegawai di kanan atas tapi agak turun -->
+      {% if pegawai.foto %}
+      <div style="position: absolute; top: 80px; right: 20px;">
+        <img src="{{ pegawai.foto.url }}" alt="Foto Pegawai" class="img-thumbnail" width="120">
+      </div>
+      {% endif %}
+
+      <!-- Data Pegawai -->
+      <div class="mb-3" style="padding-right: 150px;">
+  <table class="table table-borderless mb-0">
+    <tbody>
+      <tr>
+        <th style="width: 150px;">NIP</th>
+        <td>: {{ pegawai.nip }}</td>
+      </tr>
+      <tr>
+        <th>Nama</th>
+        <td>: {{ pegawai.nama }}</td>
+      </tr>
+      <tr>
+        <th>Jabatan</th>
+        <td>: {{ pegawai.jabatan }}</td>
+      </tr>
+      <tr>
+        <th>Golongan</th>
+        <td>: {{ pegawai.golongan|default:"-" }}</td>
+      </tr>
+      <tr>
+        <th>Pangkat</th>
+        <td>: {{ pegawai.pangkat|default:"-" }}</td>
+      </tr>
+      <tr>
+        <th>Pendidikan</th>
+        <td>: {{ pegawai.pendidikan|default:"-" }}</td>
+      </tr>
+      <tr>
+        <th>Tim Kerja</th>
+        <td>: {{ pegawai.tim_kerja|default:"-" }}</td>
+      </tr>
+      <tr>
+        <th>TMT</th>
+        <td>: {{ pegawai.tmt|default:"-" }}</td>
+      </tr>
+      <tr>
+        <th>Angker 2024</th>
+        <td>: {{ pegawai.angker_2024|default:"-" }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+      <!-- Tombol Aksi -->
+      <div class="text-center mt-4">
+        <a href="{% url 'edit_profil' %}" class="btn btn-warning">Edit Profil</a>
+        <a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}
+

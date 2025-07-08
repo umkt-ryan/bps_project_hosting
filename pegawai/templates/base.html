@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+<head>
+    <title>Aplikasi Pegawai BPS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body style="background: white;">
+<div class="container mt-4">
+    <div class="text-center mb-4">
+        <img src="{% static 'logo_bps.png' %}" height="70" alt="Logo BPS">
+        <h3>BPS Kota Samarinda</h3>
+    </div>
+    <div class="card shadow" style="background-image: url('{{ background_image }}'); background-size: cover;">
+        <div class="card-body" style="background-color: rgba(255,255,255,0.85);">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</div>
+</body>
+</html>

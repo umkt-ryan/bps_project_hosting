@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+  <div class="card shadow" style="width: 400px;">
+    <div class="card-body">
+      <h4 class="card-title mb-4">Login Pegawai</h4>
+      <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="nip" class="form-label">NIP:</label>
+          <input type="text" name="nip" id="nip" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
