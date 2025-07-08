@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-p-)vpoc)x^%6h=%2sb$lr$euym0qmax-rn*l_5^884k!#8^tw#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['bps-project-new.onrender.com']
+ALLOWED_HOSTS = ['bps-project-hosting.onrender.com']
 
 
 # Application definition
@@ -48,6 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'bps_project.urls'
