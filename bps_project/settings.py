@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-p-)vpoc)x^%6h=%2sb$lr$euym0qmax-rn*l_5^884k!#8^tw#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['bps-project-new.onrender.com']
 
 
 # Application definition
@@ -126,6 +126,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "pegawai/static"]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
